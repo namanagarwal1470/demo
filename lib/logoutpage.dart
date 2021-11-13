@@ -9,6 +9,11 @@ class logoutpage extends StatefulWidget {
 
 class _logoutpageState extends State<logoutpage> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: ListView(
