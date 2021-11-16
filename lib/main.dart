@@ -1,8 +1,9 @@
 import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
-import 'loginscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'logoutpage.dart';
+import 'loginscreen.dart';
+import 'start1.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +18,7 @@ class myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: homepage(),
+      home: start1(),
     );
   }
 }
