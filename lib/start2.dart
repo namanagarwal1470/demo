@@ -1,16 +1,16 @@
-import 'loginscreen.dart';
 import "package:flutter/material.dart";
 import 'dart:async';
-import 'start2.dart';
+import 'start3.dart';
+import 'loginscreen.dart';
 
-class start1 extends StatefulWidget {
-  start1({Key? key}) : super(key: key);
+class start2 extends StatefulWidget {
+  start2({Key? key}) : super(key: key);
 
   @override
-  _start1State createState() => _start1State();
+  _start2State createState() => _start2State();
 }
 
-class _start1State extends State<start1> {
+class _start2State extends State<start2> {
   bool k = true;
   @override
   void initState() {
@@ -26,7 +26,7 @@ class _start1State extends State<start1> {
   route() {
     k
         ? Navigator.push(
-            context, MaterialPageRoute(builder: (context) => start2()))
+            context, MaterialPageRoute(builder: (context) => start3()))
         : print("hello");
   }
 
@@ -38,8 +38,27 @@ class _start1State extends State<start1> {
             body: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Container(
+                  margin: EdgeInsets.all(40),
+                  child: Ink(
+                    decoration: ShapeDecoration(
+                      color: Colors.red,
+                      shape: CircleBorder(),
+                    ),
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_back),
+                      color: Colors.white,
+                      onPressed: () {
+                        setState(() {
+                          k = false;
+                        });
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                ),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -64,13 +83,13 @@ class _start1State extends State<start1> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Solve your mathematical", style: TextStyle(fontSize: 25))
+                Text("One problem and", style: TextStyle(fontSize: 25))
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("problems in seconds", style: TextStyle(fontSize: 25))
+                Text("multiple solutions", style: TextStyle(fontSize: 25))
               ],
             ),
             SizedBox(height: 40),
@@ -78,7 +97,7 @@ class _start1State extends State<start1> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                    "Lorem ipsum dolor sit amet,conetetur sadipscing elitr \n sed diam nonumy eirmod tempor invidunt ut laboure et \n dolore magna aliquyam erat ,sed diam voluptua, at vero",
+                    "eos et accusam et justo duo dolores et ea rebum.Stet \n clita kasd gubergren, no sea takimata sanctus est Lorem \n ipsum dolor sit amet. Lorem ipsum dolor sit amet, ",
                     style: TextStyle(fontSize: 12, color: Colors.grey))
               ],
             ),
@@ -111,7 +130,7 @@ class _start1State extends State<start1> {
                                       height: 15,
                                       width: 15,
                                       decoration: BoxDecoration(
-                                          color: Colors.white,
+                                          color: Colors.white24,
                                           shape: BoxShape.circle),
                                     ),
                                     SizedBox(width: 10),
@@ -119,7 +138,7 @@ class _start1State extends State<start1> {
                                       height: 15,
                                       width: 15,
                                       decoration: BoxDecoration(
-                                          color: Colors.white24,
+                                          color: Colors.white,
                                           shape: BoxShape.circle),
                                     ),
                                     SizedBox(width: 10),

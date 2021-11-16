@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'logoutpage.dart';
 
+
 class OtpPage extends StatefulWidget {
   final String phone;
   OtpPage(this.phone);

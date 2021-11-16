@@ -1,16 +1,15 @@
-import 'loginscreen.dart';
 import "package:flutter/material.dart";
 import 'dart:async';
-import 'start2.dart';
+import 'loginscreen.dart';
 
-class start1 extends StatefulWidget {
-  start1({Key? key}) : super(key: key);
+class start3 extends StatefulWidget {
+  start3({Key? key}) : super(key: key);
 
   @override
-  _start1State createState() => _start1State();
+  _start3State createState() => _start3State();
 }
 
-class _start1State extends State<start1> {
+class _start3State extends State<start3> {
   bool k = true;
   @override
   void initState() {
@@ -26,7 +25,7 @@ class _start1State extends State<start1> {
   route() {
     k
         ? Navigator.push(
-            context, MaterialPageRoute(builder: (context) => start2()))
+            context, MaterialPageRoute(builder: (context) => homepage()))
         : print("hello");
   }
 
@@ -38,39 +37,41 @@ class _start1State extends State<start1> {
             body: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      k = false;
-                    });
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => homepage()));
-                  },
-                  child: Container(
-                      margin: EdgeInsets.all(40),
-                      child: Text(
-                        "Skip",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                        ),
-                      )),
-                )
+                Container(
+                  margin: EdgeInsets.all(40),
+                  child: Ink(
+                    decoration: ShapeDecoration(
+                      color: Colors.red,
+                      shape: CircleBorder(),
+                    ),
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_back),
+                      color: Colors.white,
+                      onPressed: () {
+                        setState(() {
+                          k = false;
+                        });
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                ),
+
               ],
             ),
             SizedBox(height: 200),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Solve your mathematical", style: TextStyle(fontSize: 25))
+                Text("Easy tips and tricks for", style: TextStyle(fontSize: 25))
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("problems in seconds", style: TextStyle(fontSize: 25))
+                Text("better understanding", style: TextStyle(fontSize: 25))
               ],
             ),
             SizedBox(height: 40),
@@ -78,7 +79,7 @@ class _start1State extends State<start1> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                    "Lorem ipsum dolor sit amet,conetetur sadipscing elitr \n sed diam nonumy eirmod tempor invidunt ut laboure et \n dolore magna aliquyam erat ,sed diam voluptua, at vero",
+                    "voluptua, At vero eos et accusam et justo duo dolores et \n ea rebum.Stet clita kasd gubergren, no sea takimata\n sanctus est Lorem ipsum dolor sit amet ",
                     style: TextStyle(fontSize: 12, color: Colors.grey))
               ],
             ),
@@ -111,23 +112,23 @@ class _start1State extends State<start1> {
                                       height: 15,
                                       width: 15,
                                       decoration: BoxDecoration(
+                                          color: Colors.white24,
+                                          shape: BoxShape.circle),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Container(
+                                      height: 15,
+                                      width: 15,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white24,
+                                          shape: BoxShape.circle),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Container(
+                                      height: 15,
+                                      width: 15,
+                                      decoration: BoxDecoration(
                                           color: Colors.white,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Container(
-                                      height: 15,
-                                      width: 15,
-                                      decoration: BoxDecoration(
-                                          color: Colors.white24,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Container(
-                                      height: 15,
-                                      width: 15,
-                                      decoration: BoxDecoration(
-                                          color: Colors.white24,
                                           shape: BoxShape.circle),
                                     )
                                   ],

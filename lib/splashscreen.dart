@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import 'dart:async';
+import 'start1.dart';
 
 class splash extends StatefulWidget {
   splash({Key? key}) : super(key: key);
@@ -8,6 +10,21 @@ class splash extends StatefulWidget {
 }
 
 class _splashState extends State<splash> {
+  @override
+  void initState() {
+    super.initState();
+    startTime();
+  }
+
+  startTime() async {
+    var duration = new Duration(seconds: 6);
+    return Timer(duration, route);
+  }
+
+  route() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => start1()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
