@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-
+import 'dashboard.dart';
 class logoutpage extends StatefulWidget {
   logoutpage({Key? key}) : super(key: key);
 
@@ -12,6 +12,7 @@ class _logoutpageState extends State<logoutpage> {
   void initState() {
     super.initState();
   }
+  TextEditingController name = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +55,7 @@ class _logoutpageState extends State<logoutpage> {
                   width: 200,
                   height: 30,
                   child: TextField(
+                    controller: name,
                     cursorColor: Colors.black,
                     decoration: InputDecoration(
                       hintText: "Name",
@@ -220,18 +222,24 @@ class _logoutpageState extends State<logoutpage> {
           ),
         ),
         SizedBox(height: 105),
-        Container(
-          child: Center(
-            child: Text(
-              "Submit",
-              style: TextStyle(color: Colors.white, fontSize: 20),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => dashboard(name.text)));
+          },
+          child: Container(
+            child: Center(
+              child: Text(
+                "Submit",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
             ),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20), color: Colors.yellow),
+            width: 280,
+            height: 40,
+            margin: EdgeInsets.only(right: 50, left: 50, bottom: 100),
           ),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20), color: Colors.yellow),
-          width: 280,
-          height: 40,
-          margin: EdgeInsets.only(right: 50, left: 50, bottom: 100),
         ),
       ],
     ));

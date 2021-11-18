@@ -6,6 +6,7 @@ import 'logoutpage.dart';
 import 'loginscreen.dart';
 import 'start1.dart';
 import 'splashscreen.dart';
+import 'dashboard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,7 @@ class myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: splash(),
+      home: splash()
     );
   }
 }

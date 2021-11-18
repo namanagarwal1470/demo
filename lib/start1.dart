@@ -11,24 +11,14 @@ class start1 extends StatefulWidget {
 }
 
 class _start1State extends State<start1> {
-  bool k = true;
+
   @override
   void initState() {
     super.initState();
-    startTime();
+
   }
 
-  startTime() async {
-    var duration = new Duration(seconds: 6);
-    return Timer(duration, route);
-  }
 
-  route() {
-    k
-        ? Navigator.push(
-            context, MaterialPageRoute(builder: (context) => start2()))
-        : print("hello");
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +32,7 @@ class _start1State extends State<start1> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    setState(() {
-                      k = false;
-                    });
+
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => homepage()));
                   },
@@ -60,7 +48,7 @@ class _start1State extends State<start1> {
                 )
               ],
             ),
-            SizedBox(height: 200),
+            SizedBox(height: 180),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -82,7 +70,27 @@ class _start1State extends State<start1> {
                     style: TextStyle(fontSize: 12, color: Colors.grey))
               ],
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 20),
+            Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.red,
+              ),
+              child: Center(
+                child: IconButton(
+                  padding: EdgeInsets.all(5),
+                  icon: Icon(Icons.arrow_forward),
+                  color: Colors.white,
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => start2()));
+                  },
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
             Expanded(
                 child: Container(
                     decoration: BoxDecoration(
