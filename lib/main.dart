@@ -7,6 +7,11 @@ import 'loginscreen.dart';
 import 'start1.dart';
 import 'splashscreen.dart';
 import 'dashboard.dart';
+import 'start3.dart';
+import 'ques.dart';
+import 'topics.dart';
+import 'profile.dart';
+import 'hint.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

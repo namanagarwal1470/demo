@@ -1,4 +1,8 @@
 import "package:flutter/material.dart";
+import 'ques.dart';
+import 'topics.dart';
+import 'profile.dart';
+
 
 class dashboard extends StatefulWidget {
   String text='';
@@ -72,11 +76,37 @@ class _dashboardState extends State<dashboard> {
             ),
             appBar: AppBar(
               elevation: 0,
-              title: Text("Hi,  Champion",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20)),
+              title:  Row(
+                children: [
+                  Text("Hi,  Champion",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20)),
+                  Container(
+                    margin: EdgeInsets.only(top: 10, bottom: 10, left: 130),
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.white),
+                    child: Center(
+                      child: IconButton(
+                        padding: EdgeInsets.all(5),
+                        icon: Icon(Icons.verified_sharp),
+                        iconSize: 15,
+                        color: Colors.red,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => profile()));
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               backgroundColor: Colors.red,
             ),
             body: Column(
@@ -176,6 +206,12 @@ class _dashboardState extends State<dashboard> {
                                             fontWeight: FontWeight.bold,
                                             fontSize: 20))),
                                 GestureDetector(
+                                  onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => topics()));
+                                    },
                                     child: Container(
                                       child: Center(
                                         child: Text(

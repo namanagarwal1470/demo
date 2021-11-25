@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'dashboard.dart';
+
 class logoutpage extends StatefulWidget {
   logoutpage({Key? key}) : super(key: key);
 
@@ -12,8 +13,8 @@ class _logoutpageState extends State<logoutpage> {
   void initState() {
     super.initState();
   }
-  TextEditingController name = TextEditingController();
 
+  TextEditingController name = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
