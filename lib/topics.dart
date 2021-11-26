@@ -15,7 +15,8 @@ class _topicsState extends State<topics> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.red,
-        body: ListView(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: (MediaQuery.of(context).size.height) * 0.1,
@@ -24,6 +25,7 @@ class _topicsState extends State<topics> {
                   style: TextStyle(color: Colors.white, fontSize: 25)),
             ),
             Expanded(
+              flex: 1,
               child: Container(
                   height: (MediaQuery.of(context).size.height) * 0.8,
                   decoration: BoxDecoration(

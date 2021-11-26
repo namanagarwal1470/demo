@@ -252,13 +252,17 @@ class _dashboardState extends State<dashboard> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(width:30),
-                    Container(
-                      height: 20,
-                      color: Colors.white,
+                    GestureDetector(
+                      onTap: (){
+                        print("hello");},
+                      child: Container(
+                        height: 20,
+                        color: Colors.white,
 
-                      child: Text(
-                        "Recent Searches",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                        child: Text(
+                          "Recent Searches",
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
                       ),
                     ),
                   ],

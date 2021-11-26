@@ -13,7 +13,7 @@ class _hintState extends State<hint> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.red,
-      body: ListView(
+      body: Column(
         children: [
           Column(children: [
             Row(

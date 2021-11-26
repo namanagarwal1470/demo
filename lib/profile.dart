@@ -12,7 +12,7 @@ class _profileState extends State<profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      body: Column(
         children: [
           Container(
               height: (MediaQuery.of(context).size.height) * 0.6,
