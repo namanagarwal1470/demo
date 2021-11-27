@@ -1,8 +1,10 @@
 import "package:flutter/material.dart";
 import 'dashboard.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class logoutpage extends StatefulWidget {
-  logoutpage({Key? key}) : super(key: key);
+  final int phone;
+  logoutpage(this.phone);
 
   @override
   _logoutpageState createState() => _logoutpageState();
@@ -15,6 +17,12 @@ class _logoutpageState extends State<logoutpage> {
   }
 
   TextEditingController name = TextEditingController();
+  TextEditingController dob = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController examname= TextEditingController();
+  TextEditingController schoolname = TextEditingController();
+  TextEditingController classes = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,6 +96,7 @@ class _logoutpageState extends State<logoutpage> {
                   width: 200,
                   height: 30,
                   child: TextField(
+                    controller: dob,
                     cursorColor: Colors.black,
                     decoration: InputDecoration(
                       hintText: "Date of Birth",
@@ -119,6 +128,7 @@ class _logoutpageState extends State<logoutpage> {
                   width: 200,
                   height: 30,
                   child: TextField(
+                    controller: email,
                     cursorColor: Colors.black,
                     decoration: InputDecoration(
                       hintText: "Email",
@@ -150,6 +160,7 @@ class _logoutpageState extends State<logoutpage> {
                   width: 200,
                   height: 30,
                   child: TextField(
+                    controller: examname,
                     cursorColor: Colors.black,
                     decoration: InputDecoration(
                       hintText: "Exam Name",
@@ -181,6 +192,7 @@ class _logoutpageState extends State<logoutpage> {
                   width: 200,
                   height: 30,
                   child: TextField(
+                    controller: schoolname,
                     cursorColor: Colors.black,
                     decoration: InputDecoration(
                       hintText: "School Name",
@@ -212,6 +224,7 @@ class _logoutpageState extends State<logoutpage> {
                   width: 200,
                   height: 30,
                   child: TextField(
+                    controller: classes,
                     cursorColor: Colors.black,
                     decoration: InputDecoration(
                       hintText: "Class",
@@ -225,6 +238,18 @@ class _logoutpageState extends State<logoutpage> {
         SizedBox(height: 105),
         GestureDetector(
           onTap: () {
+            CollectionReference users = FirebaseFirestore.instance.collection('mobileno');
+            users
+                .add({
+              'mobile': "${widget.phone}",
+              'name':name.text,
+              'dob':dob.text,
+              'email':email.text,
+              'examname':examname.text,
+              'schoolname':schoolname.text,
+              'class':classes.text,
+
+            });
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => dashboard(name.text)));
           },

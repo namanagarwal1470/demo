@@ -12,6 +12,7 @@ import 'ques.dart';
 import 'topics.dart';
 import 'profile.dart';
 import 'hint.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +27,7 @@ class myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: splash()
+      home: homepage()
     );
   }
 }
