@@ -22,7 +22,7 @@ class _OtpPageState extends State<OtpPage> {
 
 
     for (var u in mobileinfodocs){
-      if(u["mobile"]=="${widget.phone}"){
+      if(u["mobile"]=="${widget.phone}" && u["name"]!='' && u["email"]!='' && u["schoolname"]!='' && u["class"]!='' && u["examname"]!='' && u["dob"]!=''){
         setState(() {
           m=true;
         });
